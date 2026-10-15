@@ -75,7 +75,7 @@ class DatabaseSeeder extends Seeder
                     'brand' => $brand,
                     'sku' => strtoupper(Str::substr(Str::slug($brand, ''), 0, 4)).'-'.str_pad((string) ($category->id * 100 + $i), 4, '0', STR_PAD_LEFT),
                     'short_description' => "Premium {$name} by {$brand} — crafted for everyday comfort and style.",
-                    'description' => "<p>Meet the <strong>{$name}</strong> from {$brand}. Thoughtfully designed with quality materials, it is built to last and looks great every day.</p><ul><li>Premium build quality</li><li>Easy 7-day returns</li><li>Fast doorstep delivery</li></ul>",
+                    'description' => "Meet the {$name} from {$brand}. Thoughtfully designed with quality materials, it is built to last and looks great every day.\n\n• Premium build quality\n• Easy 7-day returns\n• Fast doorstep delivery",
                     'specifications' => array_map(fn ($s) => ['label' => $s[0], 'value' => $s[1]], $specs),
                     'price' => $price,
                     'mrp' => $mrp,

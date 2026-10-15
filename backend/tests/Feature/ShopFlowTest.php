@@ -106,7 +106,7 @@ class ShopFlowTest extends TestCase
         $staff = $this->token('staff@shop.com', 'staff123');
         $res = $this->actingWithToken($staff)->post('/api/admin/products', [
             'name' => 'Test Phone', 'price' => 9999, 'mrp' => 12999, 'stock' => 5,
-            'description' => '<p>Nice</p>',
+            'description' => 'Nice phone',
             'specifications' => json_encode([['label' => 'RAM', 'value' => '8 GB']]),
             'images' => [UploadedFile::fake()->image('1.jpg'), UploadedFile::fake()->image('2.png')],
         ], ['Accept' => 'application/json'])->assertCreated()->assertJsonCount(2, 'images');
